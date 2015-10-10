@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{82D96EFB-FFB3-4D87-B039-4BB62897A3B3}</ProjectGuid>
+    <RootNamespace>FastDPM2014May</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="DPM_release64_vc12.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="DPM_debug64_vc12.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.21005.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\soft\pthreads-w32-2-9-1-release\pthreads.2;C:\soft\pthreads-w32-2-9-1-release\Pre-built.2\include;C:\soft\opencv2.4.9\opencv\build\include;C:\soft\opencv2.4.9\opencv\build\include\opencv2;C:\soft\opencv2.4.9\opencv\build\include\opencv;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\soft\pthreads-w32-2-9-1-release\Pre-built.2\lib\x86;C:\soft\opencv2.4.9\opencv\build\x86\vc12\lib;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>C:\Users\Danny\Downloads\FastDPM-2014-May\FastDPM-2014-May\FastDPM-2014-May;$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <ExecutablePath>C:\Users\Danny\Downloads\FastDPM-2014-May\FastDPM-2014-May\FastDPM-2014-May;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>C:\soft\pthreads-w32-2-9-1-release\pthreads.2;C:\soft\pthreads-w32-2-9-1-release\Pre-built.2\include;C:\soft\opencv2.4.9\opencv\build\include;C:\soft\opencv2.4.9\opencv\build\include\opencv2;C:\soft\opencv2.4.9\opencv\build\include\opencv;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\soft\pthreads-w32-2-9-1-release\Pre-built.2\lib\x86;C:\soft\opencv2.4.9\opencv\build\x86\vc12\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>opencv_calib3d249d.lib;opencv_contrib249d.lib;opencv_core249d.lib;opencv_features2d249d.lib;opencv_flann249d.lib;VACSDK.lib;VACSDKDemo.lib;opencv_gpu249d.lib;opencv_highgui249d.lib;opencv_imgproc249d.lib;opencv_legacy249d.lib;opencv_ml249d.lib;opencv_nonfree249d.lib;opencv_objdetect249d.lib;opencv_ocl249d.lib;opencv_photo249d.lib;opencv_stitching249d.lib;opencv_superres249d.lib;opencv_ts249d.lib;opencv_video249d.lib;opencv_videostab249d.lib;pthreadVC2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>C:\Users\Danny\Downloads\FastDPM-2014-May\FastDPM-2014-May\FastDPM-2014-May\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>opencv_calib3d249d.lib;opencv_contrib249d.lib;opencv_core249d.lib;opencv_features2d249d.lib;opencv_flann249d.lib;VACSDK.lib;VACSDKDemo.lib;opencv_gpu249d.lib;opencv_highgui249d.lib;opencv_imgproc249d.lib;opencv_legacy249d.lib;opencv_ml249d.lib;opencv_nonfree249d.lib;opencv_objdetect249d.lib;opencv_ocl249d.lib;opencv_photo249d.lib;opencv_stitching249d.lib;opencv_superres249d.lib;opencv_ts249d.lib;opencv_video249d.lib;opencv_videostab249d.lib;pthreadVC2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>C:\Users\Danny\Downloads\FastDPM-2014-May\FastDPM-2014-May\FastDPM-2014-May\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="FastDPM.cpp" />
+    <ClCompile Include="Get_BG.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="ResultEditor.cpp" />
+    <ClCompile Include="auxiliary\cvPrint.cpp" />
+    <ClCompile Include="auxiliary\getCurrentTime.cpp" />
+    <ClCompile Include="auxiliary\yuSaveMat.cpp" />
+    <ClCompile Include="funs\analyze_model.cpp" />
+    <ClCompile Include="funs\apply_rules.cpp" />
+    <ClCompile Include="funs\apply_rules2.cpp" />
+    <ClCompile Include="funs\apply_rules3.cpp" />
+    <ClCompile Include="funs\bboxpred_get.cpp" />
+    <ClCompile Include="funs\bboxpred_input.cpp" />
+    <ClCompile Include="funs\bounded_dt.cpp" />
+    <ClCompile Include="funs\bounded_dt2.cpp" />
+    <ClCompile Include="funs\clipboxes.cpp" />
+    <ClCompile Include="funs\cvPermutate.cpp" />
+    <ClCompile Include="funs\detections_trees2.cpp" />
+    <ClCompile Include="funs\draw_img.cpp" />
+    <ClCompile Include="funs\fconv.cpp" />
+    <ClCompile Include="funs\featpyramid.cpp" />
+    <ClCompile Include="funs\featpyramid2.cpp" />
+    <ClCompile Include="funs\features.cpp" />
+    <ClCompile Include="funs\features14_2.cpp" />
+    <ClCompile Include="funs\flipfeat.cpp" />
+    <ClCompile Include="funs\get_score_size.cpp" />
+    <ClCompile Include="funs\load_model.cpp" />
+    <ClCompile Include="funs\loc_feat.cpp" />
+    <ClCompile Include="funs\model_get_block.cpp" />
+    <ClCompile Include="funs\nms.cpp" />
+    <ClCompile Include="funs\parse_detections.cpp" />
+    <ClCompile Include="funs\pDollar_nms.cpp" />
+    <ClCompile Include="funs\reduceboxes.cpp" />
+    <ClCompile Include="funs\sum_score.cpp" />
+    <ClCompile Include="funs\yuInd2Sub.cpp" />
+    <ClCompile Include="xml_make.cpp" />
+    <ClCompile Include="yuStdDirFiles.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FastDPM.h" />
+    <ClInclude Include="Get_BG.h" />
+    <ClInclude Include="PM_type.h" />
+    <ClInclude Include="ResultEditor.h" />
+    <ClInclude Include="SDKDefines.h" />
+    <ClInclude Include="Util.h" />
+    <ClInclude Include="xml_make.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
