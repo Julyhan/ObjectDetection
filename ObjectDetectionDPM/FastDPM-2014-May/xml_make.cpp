@@ -43,6 +43,8 @@ bool cmp_type(SaveInfo a, SaveInfo b)
 	return a.type < b.type;
 }
 
+
+
 vector<SaveInfo> deletecompare(vector<SaveInfo> OnePicData)
 {
 	if (OnePicData.size() <= 1)
@@ -82,44 +84,18 @@ vector<SaveInfo> deletecompare(vector<SaveInfo> OnePicData)
 			{
 				square2 = (OnePicData.at(j).right - OnePicData.at(j).left) *
 					(OnePicData.at(j).bottom - OnePicData.at(j).top);
-				squareshare = (min(OnePicData.at(i).right, OnePicData.at(j).right) - max(OnePicData.at(i).left, OnePicData.at(j).left))
-					* (min(OnePicData.at(i).bottom, OnePicData.at(j).bottom) - max(OnePicData.at(i).top, OnePicData.at(j).top));
-				if (square1 < square2)
+				squareshare = max(min(OnePicData.at(i).right, OnePicData.at(j).right) - max(OnePicData.at(i).left, OnePicData.at(j).left), 0)
+					* max(min(OnePicData.at(i).bottom, OnePicData.at(j).bottom) - max(OnePicData.at(i).top, OnePicData.at(j).top), 0);
+
+				squaremin = min(square1, square2);
+				
+				if (squareshare / double(squaremin) > 0.7) 
 				{
-					squaremin = square1;
-					ind = 2;
-				}
-				else
-				{
-					squaremin = square2;
-					ind = 1;
-				}
-				if ((squareshare / double(squaremin) > 0.7) 
-					&&
-					((OnePicData.at(i).right <= OnePicData.at(j).left && OnePicData.at(i).left >= OnePicData.at(j).right)
-					|| (OnePicData.at(j).right >= OnePicData.at(i).left && OnePicData.at(j).left <= OnePicData.at(i).right))
-					&&
-					((OnePicData.at(i).bottom <= OnePicData.at(j).top && OnePicData.at(i).top >= OnePicData.at(j).bottom)
-					|| (OnePicData.at(j).bottom >= OnePicData.at(i).top && OnePicData.at(j).top <= OnePicData.at(i).bottom))
-					)
-				{
-					if (ind == 2)
+					for (int iter1 = i; iter1 < carsize - 1; iter1++)
 					{
-						for (int iter1 = i; iter1 < carsize - 1; iter1++)
-						{
-							OnePicData.at(iter1) = OnePicData.at(iter1 + 1);
-						}
-						carsize = carsize - 1;
-						break;
+						OnePicData.at(iter1) = OnePicData.at(iter1 + 1);
 					}
-					if (ind == 1)
-					{
-						for (int iter1 = j; iter1 < carsize - 1; iter1++)
-						{
-							OnePicData.at(iter1) = OnePicData.at(iter1 + 1);
-						}
-						carsize = carsize - 1;
-					}
+					carsize = carsize - 1;
 				}
 				else
 				{
@@ -141,44 +117,16 @@ vector<SaveInfo> deletecompare(vector<SaveInfo> OnePicData)
 				{
 					square2 = (OnePicData.at(j).right - OnePicData.at(j).left) *
 						(OnePicData.at(j).bottom - OnePicData.at(j).top);
-					squareshare = (min(OnePicData.at(i).right, OnePicData.at(j).right) - max(OnePicData.at(i).left, OnePicData.at(j).left))
-						* (min(OnePicData.at(i).bottom, OnePicData.at(j).bottom) - max(OnePicData.at(i).top, OnePicData.at(j).top));
-					if (square1 < square2)
+					squareshare = max(min(OnePicData.at(i).right, OnePicData.at(j).right) - max(OnePicData.at(i).left, OnePicData.at(j).left), 0)
+						* max(min(OnePicData.at(i).bottom, OnePicData.at(j).bottom) - max(OnePicData.at(i).top, OnePicData.at(j).top), 0);
+					squaremin = min(square1, square2);
+					if (squareshare / double(squaremin) > 0.7)
 					{
-						squaremin = square1;
-						ind = 2;
-					}
-					else
-					{
-						squaremin = square2;
-						ind = 1;
-					}
-					if ((squareshare / double(squaremin) > 0.7)
-						&&
-						((OnePicData.at(i).right <= OnePicData.at(j).left && OnePicData.at(i).left >= OnePicData.at(j).right)
-						|| (OnePicData.at(j).right >= OnePicData.at(i).left && OnePicData.at(j).left <= OnePicData.at(i).right))
-						&&
-						((OnePicData.at(i).bottom <= OnePicData.at(j).top && OnePicData.at(i).top >= OnePicData.at(j).bottom)
-						|| (OnePicData.at(j).bottom >= OnePicData.at(i).top && OnePicData.at(j).top <= OnePicData.at(i).bottom))
-						)
-					{
-						if (ind == 2)
+						for (int iter1 = i; iter1 < carsize - 1; iter1++)
 						{
-							for (int iter1 = i; iter1 < carsize - 1; iter1++)
-							{
-								OnePicData.at(iter1) = OnePicData.at(iter1 + 1);
-							}
-							carsize = carsize - 1;
-							break;
+							OnePicData.at(iter1) = OnePicData.at(iter1 + 1);
 						}
-						if (ind == 1)
-						{
-							for (int iter1 = j; iter1 < carsize - 1; iter1++)
-							{
-								OnePicData.at(iter1) = OnePicData.at(iter1 + 1);
-							}
-							carsize = carsize - 1;
-						}
+						carsize = carsize - 1;
 					}
 					else
 					{
@@ -211,46 +159,17 @@ vector<SaveInfo> deletecompare(vector<SaveInfo> OnePicData)
 			{
 				square2 = (OnePicData.at(j).right - OnePicData.at(j).left) *
 					(OnePicData.at(j).bottom - OnePicData.at(j).top);
-				squareshare = (min(OnePicData.at(i).right, OnePicData.at(j).right) - max(OnePicData.at(i).left, OnePicData.at(j).left))
-					* (min(OnePicData.at(i).bottom, OnePicData.at(j).bottom) - max(OnePicData.at(i).top, OnePicData.at(j).top));
-				if (square1 < square2)
+				squareshare = max(min(OnePicData.at(i).right, OnePicData.at(j).right) - max(OnePicData.at(i).left, OnePicData.at(j).left), 0)
+					* max(min(OnePicData.at(i).bottom, OnePicData.at(j).bottom) - max(OnePicData.at(i).top, OnePicData.at(j).top), 0);
+				squaremin = min(square1, square2);
+				if (squareshare / double(squaremin) > 0.8)
 				{
-					squaremin = square1;
-					ind = 1;
-				}
-				else
-				{
-					squaremin = square2;
-					ind = 2;
-				}
-				if ((squareshare / double(squaremin) > 0.8)
-					&&
-					((OnePicData.at(i).right <= OnePicData.at(j).left && OnePicData.at(i).left >= OnePicData.at(j).right)
-					|| (OnePicData.at(j).right >= OnePicData.at(i).left && OnePicData.at(j).left <= OnePicData.at(i).right))
-					&&
-					((OnePicData.at(i).bottom <= OnePicData.at(j).top && OnePicData.at(i).top >= OnePicData.at(j).bottom)
-					|| (OnePicData.at(j).bottom >= OnePicData.at(i).top && OnePicData.at(j).top <= OnePicData.at(i).bottom))
-					)
-				{
-					if (ind == 2)
+					for (int iter1 = i; iter1 < carsize - 1; iter1++)
 					{
-						for (int iter1 = i; iter1 < carsize - 1; iter1++)
-						{
-							OnePicData.at(iter1) = OnePicData.at(iter1 + 1);
-						}
-						personsize = personsize - 1;
-						length = length - 1;
-						break;
+						OnePicData.at(iter1) = OnePicData.at(iter1 + 1);
 					}
-					if (ind == 1)
-					{
-						for (int iter1 = j; iter1 < carsize - 1; iter1++)
-						{
-							OnePicData.at(iter1) = OnePicData.at(iter1 + 1);
-						}
-						personsize = personsize - 1;
-						length = length - 1;
-					}
+					personsize = personsize - 1;
+					length = length - 1;
 				}
 				else
 				{
@@ -272,46 +191,17 @@ vector<SaveInfo> deletecompare(vector<SaveInfo> OnePicData)
 				{
 					square2 = (OnePicData.at(j).right - OnePicData.at(j).left) *
 						(OnePicData.at(j).bottom - OnePicData.at(j).top);
-					squareshare = (min(OnePicData.at(i).right, OnePicData.at(j).right) - max(OnePicData.at(i).left, OnePicData.at(j).left))
-						* (min(OnePicData.at(i).bottom, OnePicData.at(j).bottom) - max(OnePicData.at(i).top, OnePicData.at(j).top));
-					if (square1 < square2)
+					squareshare = max(min(OnePicData.at(i).right, OnePicData.at(j).right) - max(OnePicData.at(i).left, OnePicData.at(j).left), 0)
+						* max(min(OnePicData.at(i).bottom, OnePicData.at(j).bottom) - max(OnePicData.at(i).top, OnePicData.at(j).top), 0);
+					squaremin = min(square1, square2);
+					if (squareshare / double(squaremin) > 0.8)
 					{
-						squaremin = square1;
-						ind = 1;
-					}
-					else
-					{
-						squaremin = square2;
-						ind = 2;
-					}
-					if ((squareshare / double(squaremin) > 0.8)
-						&&
-						((OnePicData.at(i).right <= OnePicData.at(j).left && OnePicData.at(i).left >= OnePicData.at(j).right)
-						|| (OnePicData.at(j).right >= OnePicData.at(i).left && OnePicData.at(j).left <= OnePicData.at(i).right))
-						&&
-						((OnePicData.at(i).bottom <= OnePicData.at(j).top && OnePicData.at(i).top >= OnePicData.at(j).bottom)
-						|| (OnePicData.at(j).bottom >= OnePicData.at(i).top && OnePicData.at(j).top <= OnePicData.at(i).bottom))
-						)
-					{
-						if (ind == 2)
+						for (int iter1 = i; iter1 < personsize - 1; iter1++)
 						{
-							for (int iter1 = i; iter1 < personsize - 1; iter1++)
-							{
-								OnePicData.at(iter1) = OnePicData.at(iter1 + 1);
-							}
-							personsize = personsize - 1;
-							length = length - 1;
-							break;
+							OnePicData.at(iter1) = OnePicData.at(iter1 + 1);
 						}
-						if (ind == 1)
-						{
-							for (int iter1 = j; iter1 < personsize - 1; iter1++)
-							{
-								OnePicData.at(iter1) = OnePicData.at(iter1 + 1);
-							}
-							personsize = personsize - 1;
-							length = length - 1;
-						}
+						personsize = personsize - 1;
+						length = length - 1;
 					}
 					else
 					{
